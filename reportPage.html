@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+</head>
+
+<body class="report-page">
+  <!-- <div class="container"> -->
+    <div class="sidebar">
+        <div class="logo">
+            <object type="image/svg+xml" data="assets/LogoLaporCerdas.svg" class="logo-icon"></object>
+            <h2 class="logo-text">LAPOR CERDAS</h2>
+        </div>
+        <hr>
+        <div class="bio">Solusi Pengaduan Masyarakat Berbasis Teknologi</div>
+        <a href="reportPage.html" class="add-report">+ Tambah Laporan</a>
+
+      <div class="sidebar-content">
+        <nav>
+              <ul>
+                  <a href="index.html"><li class="nav-item"><object type="image/svg+xml" data="assets/home_icon.svg" class="sidebar-icon"></object>Beranda</li></a>
+                  <li class="nav-item"><object type="image/svg+xml" data="assets/history.svg" class="sidebar-icon"></object>Riwayat</li>
+                  <li class="nav-item"><object type="image/svg+xml" data="assets/stats2.svg" class="sidebar-icon"></object>Status Laporan</li>
+                  <li class="nav-item"><object type="image/svg+xml" data="assets/feedbback.svg" class="sidebar-icon"></object>Umpan Balik</li>
+                  <li class="nav-item"><object type="image/svg+xml" data="assets/settings.svg" class="sidebar-icon"></object>Pengaturan</li>
+                  <li class="nav-item"><object type="image/svg+xml" data="assets/info.svg" class="sidebar-icon"></object>Tentang Kami</li>
+              </ul>
+          </nav>
+      </div>
+    </div>
+
+    <main class="report-form">
+      <h1>Buat Laporan Baru</h1>
+      <p>Laporkan masalah yang Anda temui dengan mudah dan cepat.</p>
+      <form>
+        <label>Nama Lengkap</label>
+        <input type="text" placeholder="Masukkan nama">
+
+        <label for="kategori">Kategori *</label>
+        <input type="text" id="kategori" placeholder="Masukkan kategori" required>
+
+        <label for="deskripsi">Deskripsi Laporan *</label>
+        <textarea id="deskripsi" placeholder="Masukkan teks" required></textarea>
+
+        <label for="lokasi">Lokasi Kejadian *</label>
+        <input type="text" id="lokasi" placeholder="Masukkan lokasi" required>
+
+        <label>Unggah Bukti *</label>
+        <input type="file" required>
+
+        <div class="checkbox">
+          <input type="checkbox" id="agree">
+          <label for="agree">Saya menyatakan bahwa laporan ini benar dan dapat dipertanggungjawabkan.</label>
+        </div>
+
+        <button type="submit">Kirim Laporan</button>
+      </form>
+    </main>
+  <!-- </div> -->
+</body>
+
+</html>
