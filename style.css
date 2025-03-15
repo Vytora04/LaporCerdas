@@ -447,24 +447,64 @@ body {
 }
 
 .index-page .status.ongoing {
-  background: #007bff;
+  background: #46638e;
 }
 
 .index-page .status.not-started {
   background: #7B213E;
 }
 
-/* reportPage.html STYLES */
-.new-report-page
- {
-  background-color: #F7FBFF;
-  width: 100%;
-  display: flex;
-  min-width: 100vh;
+.index-page .status-small {
+  padding: 2px 6px;
+  margin: 20px 5px 20px 0px;
+  font-size: 10pt;
+  color: white;
+  border-radius: 10px;
+  font-weight:500;
+  width: fit-content;
+  align-self: flex-end;
 }
 
-.new-report-page
- .container {
+.index-page .status-small.unverified {
+  background: #383538;
+}
+
+/* reportPage.html STYLES */
+/* Differences extracted from style_sky.css compared to style.css */
+
+/* Background color change */
+html,
+body {
+  background-color: #e6eaf0; /* Changed from #f7fbff */
+}
+
+/* Index Page header changes */
+.index-page header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #F7FBFF;
+  position: fixed;
+  top: 0;
+  left: 260px;
+  right: 0;
+  height: 80px; /* Explicitly set height */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* New Report Page Flex Centering */
+.new-report-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.new-report-page .container {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -473,8 +513,7 @@ body {
   margin-left: 260px; 
 }
 
-.new-report-page
- .report-form {
+.new-report-page .report-form {
   width: 100%;
   max-width: 800px;
   padding: 30px;
@@ -484,30 +523,25 @@ body {
   margin: 20px auto;
 }
 
-.new-report-page
- .report-form h1 {
+.new-report-page .report-form h1 {
   color: #46638E;
   margin-bottom: 10px;
 }
 
-.new-report-page
- .report-form p {
+.new-report-page .report-form p {
   font-size: 14px;
   color: #555;
   margin-bottom: 20px;
 }
 
-.new-report-page
- .report-form label {
+.new-report-page .report-form label {
   font-weight: bold;
   display: block;
   margin-top: 10px;
 }
 
-.new-report-page
- .report-form input,
-.new-report-page
- .report-form textarea {
+.new-report-page .report-form input,
+.new-report-page .report-form textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -516,20 +550,17 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
-.new-report-page
- .report-form textarea {
+.new-report-page .report-form textarea {
   height: 100px;
 }
 
-.new-report-page
- .checkbox {
+.new-report-page .checkbox {
   display: flex;
   align-items: center;
   margin-top: 15px;
 }
 
-.new-report-page
- .checkbox input {
+.new-report-page .checkbox input {
   margin-right: 10px;
 }
 
@@ -547,9 +578,83 @@ body {
   transition: background 0.3s;
 }
 
+.new-report-page  #toggleSidebar {
+  display: none;
+}
+
 .new-report-page button:hover {
   background: #5c182f;
 }
+
+@media (min-width: 768px) and (max-width: 1230px) {
+  .new-report-page .sidebar hr {
+    display: none;
+  }
+  .new-report-page .sidebar {
+    width: 80px; /* Shrinks when it reaches form */
+  }
+  .new-report-page .report-form {
+    margin-left: 80px; /* Align with smaller sidebar */
+    width: calc(100% - 80px);
+  }
+  /* Adjust Sidebar Content */
+  .new-report-page .sidebar .logo-text,
+  .new-report-page .sidebar .bio,
+  .new-report-page .sidebar .add-text,
+  .new-report-page .sidebar .nav-text {
+    display: none;
+    opacity: 0;
+  }
+  /* Center Icons */
+  .new-report-page .sidebar .sidebar-icon {
+    margin-right: 0;
+  }
+  /* Sidebar Items Centered */
+  .new-report-page .sidebar nav ul li {
+    padding: 12px 0;
+    justify-content: center;
+  }
+  #toggleSidebar {
+    display: none;
+  }
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 480px) {
+  .new-report-page {
+    padding: 10px;
+  }
+  .new-report-page .report-form {
+    width: 100%;
+    padding: 10px;
+    border-radius: 0;
+  }
+  .new-report-page .report-form h1 {
+    font-size: 20px;
+  }
+  .new-report-page .report-form p {
+    font-size: 12px;
+  }
+  .new-report-page .report-form input,
+  .new-report-page .report-form textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .new-report-page button {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .new-report-page .checkbox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .new-report-page .checkbox input {
+    margin-bottom: 5px;
+  }
+}
+
+
+
 
 /* Modal styles */
 .modal {
@@ -729,7 +834,8 @@ body {
   gap: 10px;
   overflow-x: scroll;
   overflow-y: hidden;
-  width: 95%;
+  width: 100%;
+  padding-bottom: 20px;;
 }
 .verification .report-list .report-item img {
   width:  432px;
@@ -1079,4 +1185,3 @@ body {
   }
 
 }
-

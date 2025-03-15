@@ -20,6 +20,9 @@
     
     <div class="sidebar" id="sidebar">
         <div class="logo">
+            <span class="hamburger-icon" id="hamburger-menu">
+                <img src="dokumen_ureeka/hamburger_icon.png" alt="Menu">
+            </span>
             <!-- Logo that will remain visible in both states -->
             <object type="image/svg+xml" data="assets/LogoLaporCerdas.svg" class="logo-icon"></object>
             <!-- Text that will be hidden when collapsed -->
@@ -53,7 +56,7 @@
                             <span class="nav-text">Riwayat</span>
                         </li>
                     </a>
-                    <a>
+                    <a href="statusLaporan.html">
                         <li class="nav-item">
                             <svg version="1.1" class="sidebar-icon" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
                                 <g display="none">
@@ -376,7 +379,6 @@
                 </ul>
             </nav>
         </div>
-
         <!-- sidebar selesai -->
         <!-- Toggle button for mobile/tablet -->
         <button id="toggleSidebar" class="toggle-btn">
@@ -415,7 +417,7 @@
                 </div>
                 <div class="report-card not-started">
                     <!-- <img src="wifi_rusak.jpg" alt="WiFi Kantor Rusak"> -->
-                    <span class="status">NOT STARTED</span>
+                    <span class="status not-started">NOT STARTED</span>
                     <p>Wi-Fi Kantor Imigrasi Jakarta Selatan Rusak</p>
                 </div>
             </div>
@@ -428,18 +430,15 @@
             <div class="report-list">
                 <div class="report-item unverified">
                     <a href="laporan1.html"><img src="dokumen_ureeka/gambar3.jpeg" alt="Laporan 1"></a>
-                    <p>Judul</p>
-                    <span class="status">UNVERIFIED</span>
+                    <p><span class="status-small unverified">UNVERIFIED</span> Judul</p>
                 </div>
                 <div class="report-item unverified">
                     <a href="laporan2.html"><img src="dokumen_ureeka/gambar1.jpeg" alt="Laporan 2"></a>
-                    <p>Judul</p>
-                    <span class="status">UNVERIFIED</span>
+                    <p><span class="status-small unverified">UNVERIFIED</span> Judul</p>
                 </div>
                 <div class="report-item unverified">
                     <a href="laporan2.html"><img src="dokumen_ureeka/gambar2.jpeg" alt="Laporan 3"></a>
-                    <p>Judul</p>
-                    <span class="status">UNVERIFIED</span>
+                    <p><span class="status-small unverified">UNVERIFIED</span> Judul</p>
                 </div>
             </div>
         </section>
