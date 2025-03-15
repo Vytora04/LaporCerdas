@@ -1,0 +1,405 @@
+/* Additional CSS for laporan.html */
+
+/* Report page main layout */
+.report-page {
+    background-color: #F7FBFF;
+    width: calc(100% - 260px); /* Adjust width to prevent overlap */
+    margin-left: 260px; /* Matches sidebar width */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+/* Header with search box - fixed positioning */
+.report-page header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #F7FBFF;
+  position: fixed;
+  top: 0;
+  left: 260px;
+  right: 0;
+  height: 80px; /* Explicitly set height */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+  
+  /* Add padding to the main content to prevent it from being hidden behind the fixed header */
+  .report-page .main-content {
+    position: relative; /* Add this */
+    margin-top: 80px; /* Space for the fixed header */
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px); /* Instead of fixed height */
+    overflow: visible; /* Ensure content is visible */
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px 15px;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .search-box {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 5px;
+  }
+  
+  .report-page .icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+  }
+  
+  /* Report title section */
+  .report-title {
+    margin-bottom: 20px;
+  }
+  
+  .report-title h1 {
+    color: #46638E;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0; /* Remove extra margin */
+  }
+  /* Report details section */
+  .report-details {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .report-image {
+    width: 100%;
+    aspect-ratio: 5 / 2;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+  
+  .report-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .report-info {
+    padding: 10px 0;
+  }
+  
+  .report-info p {
+    margin: 10px 0;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .report-info h2 {
+    color: #46638E;
+    margin: 20px 0 10px 0;
+    font-size: 1.3rem;
+  }
+  
+  /* Verification section */
+  .verification-section {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  .verification-section h3 {
+    color: #46638E;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .verification-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .verification-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  
+  /* Yes button styling */
+  .verification-buttons .yes-btn {
+    background-color: #4CAF50;
+  }
+  
+  .verification-buttons .yes-btn:hover {
+    background-color: #3d8b40; /* 10% darker green */
+  }
+  
+  /* No button styling */
+  .verification-buttons .no-btn {
+    background-color: #7B213E;
+  }
+  
+  .verification-buttons .no-btn:hover {
+    background-color: #691036; /* 10% darker red */
+  }
+  
+  /* Remove the general button hover that's causing the issue */
+  /* .verification-buttons button:hover {
+    opacity: 0.7;
+  } */
+   
+  .evidence-upload {
+    border: 1px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .evidence-upload:hover {
+    background-color: #d2d8ec;
+  }
+  
+  .evidence-upload img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .evidence-upload p {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* Comments section */
+  .comments-section {
+    margin: 30px 0;
+  }
+  
+  .comments-section h2 {
+    color: #46638E;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+  
+  .comment {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-author {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .comment-time {
+    color: #777;
+    font-size: 0.9rem;
+  }
+  
+  .comment-text {
+    margin-top: 5px;
+    color: #333;
+  }
+  
+  .comment-form {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+  
+  .comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 10px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .comment-form button {
+    background-color: #46638e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .comment-form button:hover {
+    background-color: #2d4468;
+  }
+  
+  /* Related reports section */
+  .related-reports {
+    margin: 30px 0;
+  }
+  
+  .related-reports h2 {
+    color: #46638E;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+  
+  .report-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  
+  .report-item {
+    min-width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .report-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .report-item-info {
+    padding: 15px;
+  }
+  
+  .report-item-title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .report-item-meta {
+    color: #777;
+    font-size: 0.9rem;
+  }
+  
+  /* Status indicators */
+  .status-indicator {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .status-unverified {
+    background-color: #383538;
+  }
+  
+  .status-verified {
+    background-color: #458562;
+  }
+  
+  .status-pending {
+    background-color: #46638e;
+  }
+  
+  /* Trust score */
+  .trust-score {
+    display: inline-flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .trust-score-value {
+    font-weight: bold;
+    color: #46638E;
+    margin-right: 5px;
+  }
+  
+  .trust-score-icon {
+    color: #4CAF50;
+    font-size: 1.2rem;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .verification-buttons {
+      flex-direction: column;
+    }
+    
+    .verification-buttons button {
+      width: 100%;
+    }
+    
+    .report-list {
+      flex-direction: column;
+    }
+    
+    .report-item {
+      min-width: unset;
+      width: 100%;
+    }
+  }
+  
+  /* Additional mobile responsive styles */
+  @media (max-width: 480px) {
+    .report-details {
+      padding: 15px;
+    }
+    
+    .verification-section {
+      padding: 15px;
+    }
+    
+    .report-info h2 {
+      font-size: 1.2rem;
+    }
+    
+    .verification-section h3 {
+      font-size: 1.1rem;
+    }
+    
+    .evidence-upload {
+      padding: 15px;
+    }
+    
+    .evidence-upload img {
+      width: 30px;
+      height: 30px;
+    }
+  }

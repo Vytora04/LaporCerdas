@@ -1,0 +1,135 @@
+/* Global Styles */
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f0f3f7;
+    margin: 0;
+    display: flex;
+}
+
+.main-content {
+    height: 100%;
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #eef1f6;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.back-icon {
+    width: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Form Styling */
+
+.settings-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Memberikan jarak antar input */
+}
+.form-row .form-group {
+    flex: 1; /* Membuat kedua elemen memiliki lebar yang sama */
+}
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #d1d9e6;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #546de5;
+    outline: none;
+}
+
+/* Button Styles */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Simpan Perubahan */
+.save-btn {
+    background-color: #123764;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 30px;
+}
+
+.save-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Batalkan */
+.cancel-btn {
+    background-color: white;
+    color: #3b82f6;
+    border: 2px solid #020a17;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.cancel-btn:hover {
+    background-color: #b5b8bb;
+}
+
+/* Hapus Akun */
+.delete-btn {
+    background-color: #7b1e31;
+    color: white;
+    border-radius: 30px;
+}
+
+.delete-btn:hover {
+    background-color: #5a1423;
+}
+

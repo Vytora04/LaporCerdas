@@ -7,33 +7,53 @@
 
 html,
 body {
-  height: 100%;
-  background-color: #e6eaf0;
+  min-height: 100vh; /* Ensures content can expand */
+  height: auto; /* Allows natural height */
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #e6eaf0;
   min-height: 100vh;
   
 }
 
-/* Sidebar styles - consolidated */
+/* Base sidebar styles */
 .sidebar {
-  width: 260px;
-  height: 100%;
+  height: 100vh;
   background-color: #46638E;
   color: white;
   padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 9999;
+  transition: width 0.3s ease;
+  width: 260px; /* Default expanded width */
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
+/* Collapsed state */
+.sidebar.collapsed {
+  width: 80px;
+  padding: 20px 10px;
+}
+
+/* Logo styles */
 .sidebar .logo {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-top: 10px;
   margin-bottom: 5px;
   justify-content: center;
+}
+
+.sidebar .logo-icon {
+  width: 40px;
+  height: 40px;
 }
 
 .sidebar .logo-text {
@@ -41,8 +61,15 @@ body {
   font-weight: 1000;
   color: #F7FBFF;
   margin-left: 10px;
+  transition: opacity 0.3s ease;
 }
 
+.sidebar.collapsed .logo-text {
+  opacity: 0;
+  display: none;
+}
+
+/* Divider */
 .sidebar hr {
   width: 80%;
   border: none;
@@ -51,13 +78,23 @@ body {
   margin: 10px auto;
 }
 
+/* Bio text */
 .sidebar .bio {
   text-align: center;
   margin-bottom: 15px;
+  transition: opacity 0.3s ease;
 }
 
+.sidebar.collapsed .bio {
+  opacity: 0;
+  display: none;
+}
+
+/* Add report button */
 .sidebar .add-report {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   background: #7B213E;
   color: white;
@@ -74,12 +111,36 @@ body {
   background: #5c182f;
 }
 
-.sidebar .sidebar-content {
+.sidebar .plus-icon {
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.sidebar .add-text {
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .add-text {
+  opacity: 0;
+  display: none;
+}
+
+.sidebar.collapsed .add-report {
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation content */
+.sidebar-content {
   padding: 0 0 10px 0;
   background: #FFFCFA;
   border-radius: 10px;
   width: 100%;
   flex-grow: 1;
+  overflow-y: auto; /* Enables scrolling */
+  max-height: calc(100vh - 100px); /* Adjust height dynamically */
 }
 
 .sidebar nav ul {
@@ -88,12 +149,18 @@ body {
   width: 100%;
 }
 
+.sidebar nav ul a {
+  text-decoration: none;
+  display: block;
+}
+
 .sidebar nav ul li {
   margin: 10px 0;
   padding: 12px;
   background-color: #FFFCFA;
   color: #46638E;
-  text-align: center;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
@@ -101,19 +168,149 @@ body {
 }
 
 .sidebar .sidebar-content .sidebar-icon {
-  margin-right:4px;
-  width:1.2rem;
+  margin-right: 8px;
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+}
+
+.sidebar.collapsed .sidebar-content .sidebar-icon {
+  margin-right: 0;
 }
 
 .sidebar nav ul li:hover {
   background-color: #d2f0fb;
 }
 
+.sidebar .nav-text {
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .nav-text {
+  opacity: 0;
+  display: none;
+}
+
+.sidebar.collapsed nav ul li {
+  padding: 12px 0;
+  justify-content: center;
+}
+
+/* Toggle button */
+.toggle-icon{
+  width: 10px;
+  color: white;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  background: #46638E;
+  border: 2px solid white;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #5c7cb5;
+}
+
+.sidebar.collapsed .toggle-btn {
+  transform: rotate(180deg);
+}
+
+/* Media queries for responsive behavior */
+@media screen and (max-width: 768px) {
+  .sidebar {
+      width: 80px; /* Start collapsed on tablets */
+  }
+  
+  .sidebar .logo-text,
+  .sidebar .bio,
+  .sidebar .nav-text,
+  .sidebar .add-text {
+      opacity: 0;
+      display: none;
+  }
+  
+  .sidebar nav ul li {
+      padding: 12px 0;
+      justify-content: center;
+  }
+  
+  .sidebar.collapsed .sidebar-content .sidebar-icon {
+      margin-right: 0;
+  }
+  
+  .sidebar .add-report {
+      padding: 12px 0;
+      display: flex;
+      justify-content: center;
+  }
+  
+  /* When expanded on mobile */
+  .sidebar.expanded {
+      width: 260px;
+  }
+  
+  .sidebar.expanded .logo-text,
+  .sidebar.expanded .bio,
+  .sidebar.expanded .nav-text,
+  .sidebar.expanded .add-text {
+      opacity: 1;
+      display: block;
+  }
+  
+  .sidebar.expanded nav ul li {
+      padding: 12px;
+      justify-content: flex-start;
+  }
+  
+  .sidebar.expanded .sidebar-content .sidebar-icon {
+      margin-right: 8px;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .sidebar {
+      width: 0;
+      padding: 0;
+      overflow: hidden;
+  }
+  
+  .sidebar.expanded {
+      width: 260px;
+      padding: 20px;
+  }
+  
+  .toggle-btn {
+      right: -15px;
+  }
+}
+
 /* index.html STYLES */
 .index-page {
-  background-color: #F7FBFF;
+  /* background-color: #F7FBFF;
   width: 100%;
+  display: flex; */
+  
+  background-color: #F7FBFF;
+  width: calc(100% - 260px); /* Adjust width to prevent overlap */
+  margin-left: 260px; /* Matches sidebar width */
+  padding: 20px;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .index-page .nav-item {
@@ -134,18 +331,56 @@ body {
 
 .index-page .main-content {
   flex: 1;
-  padding: 20px;
+  padding: 80px 20px 20px 20px;
+  width: 100%;
 }
 
 .index-page header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #F7FBFF;
+  position: fixed;
+  top: 0;
+  left: 260px;
+  right: 0;
+  height: 80px; /* Explicitly set height */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 5px 15px;
+  width: 30%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-box {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 5px;
 }
 
 .index-page .search-bar {
   padding: 10px;
+  margin-top: 20px;
   width: 300px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -220,46 +455,59 @@ body {
 }
 
 /* reportPage.html STYLES */
-.report-page {
+.new-report-page
+ {
   background-color: #F7FBFF;
   width: 100%;
   display: flex;
+  min-width: 100vh;
 }
 
-.report-page .container {
-  display: flex;
-  align-items: flex-start;
-}
-
-.report-page .report-form {
+.new-report-page
+ .container {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-left: 260px; 
+}
+
+.new-report-page
+ .report-form {
+  width: 100%;
+  max-width: 800px;
   padding: 30px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: none;
   margin: 20px auto;
 }
 
-.report-page .report-form h1 {
+.new-report-page
+ .report-form h1 {
   color: #46638E;
   margin-bottom: 10px;
 }
 
-.report-page .report-form p {
+.new-report-page
+ .report-form p {
   font-size: 14px;
   color: #555;
   margin-bottom: 20px;
 }
 
-.report-page .report-form label {
+.new-report-page
+ .report-form label {
   font-weight: bold;
   display: block;
   margin-top: 10px;
 }
 
-.report-page .report-form input,
-.report-page .report-form textarea {
+.new-report-page
+ .report-form input,
+.new-report-page
+ .report-form textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -268,21 +516,24 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
-.report-page .report-form textarea {
+.new-report-page
+ .report-form textarea {
   height: 100px;
 }
 
-.report-page .checkbox {
+.new-report-page
+ .checkbox {
   display: flex;
   align-items: center;
   margin-top: 15px;
 }
 
-.report-page .checkbox input {
+.new-report-page
+ .checkbox input {
   margin-right: 10px;
 }
 
-.report-page button {
+.new-report-page button {
   display: block;
   width: 100%;
   padding: 12px;
@@ -296,7 +547,7 @@ body {
   transition: background 0.3s;
 }
 
-.report-page button:hover {
+.new-report-page button:hover {
   background: #5c182f;
 }
 
@@ -487,8 +738,102 @@ body {
   border-radius: 12px;
 }
 
-/* Responsive styles */
+.hamburger-icon {
+  display: none;
+}
+
+
+
+/* css buat about me start*/
+.introduction {
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1 {
+  /* padding-top: 50vh; */
+  font-size: 38px;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 10px;
+  margin-top: 0; 
+}
+
+.h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #123764;
+  margin-bottom: 50px;
+  display: inline-block; 
+  transform:skewX(-2deg);
+  padding-bottom: 5px; 
+  border-bottom: 4px solid #072344; 
+  word-spacing: 2px; 
+}
+
+.description {
+  background-color: #46638E;
+  background-size: 100vh;
+  font-size: 22px;
+  color: #f9f8f8;
+  margin-bottom: 20px;
+  padding: 70px;
+  padding-top: 50px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 16px;
+  transform: skewY(-0.5deg);
+  /* position: relative; */
+}
+
+.back-icon {
+  width: 30px;  
+  height: 30px; 
+  cursor: pointer; 
+  transition: transform 0.3s; 
+}
+
+.back-icon:hover {
+  transform: scale(1.2); 
+}
+
+
+/* css buat about me end*/
+
+
+
+
+/* Responsive style buat laptop */
+@media (max-width: 1024px) {
+  .search-bar {
+    width: 260px;
+  }
+  .new-report-page
+   .container {
+    margin-left: 240px;
+    padding: 15px;
+  }
+
+  .new-report-page
+   .report-form {
+    padding: 20px;
+  }
+  
+
+}
+
+/* Responsive styles buat ipad*/
 @media (max-width: 768px) {
+  .index-page header {
+    position: static;
+  }
+
   .form-container {
     flex-direction: column;
   }
@@ -502,4 +847,236 @@ body {
     margin-top: 30px;
   }
 
+  /* Sidebar/Navbar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full-width navbar */
+    height: 60px; /* Adjust height */
+    background-color: #6E1D33;
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    align-items: center;
+    justify-content: space-between; /* Center content */
+    padding: 0 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  
+
+  .sidebar hr {
+    display: none;
+  }
+
+  .nav-items {
+    display: flex;
+    flex-grow: 2; /* Allow space for items */
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .bio {
+    display: none; /* Hide bio on tablets */
+  }
+
+  /* Ensure content is not blocked by navbar */
+  .main-content {
+    margin-top: 90px;
+  }
+
+  .logo {
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  /* Search bar fix */
+  .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Report button smaller */
+  .floating-button {
+    width: 35px;  /* Smaller width */
+    height: 35px; /* Smaller height */
+    font-size: 0.8rem; /* Reduce text/icon size */
+    padding: 5px;
+  }
+
+  .reports {
+    flex-direction: column;
+  }
+
+  .report-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .index-page {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 60px;
+  }
+
+  .index-page .reports {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal {
+    width: 90%;
+  }
+
+  .new-report-page .container {
+    margin-left: 200px;
+    padding: 10px;
+  }
+
+  /* Show hamburger button */
+  #toggleSidebar {
+    display: none;
+  }
+
+  .hamburger-icon {
+  display: flex;
+  position: fixed;
+  top: 12px;
+  left: 15px;
+  z-index: 1000;
+  cursor: pointer;
+  }
+
+  .hamburger-icon img {
+  width: 30px;
+  height: 30px;
+  }
+  
+
+  
 }
+
+/* Responsive style buat mobile */
+@media (max-width: 480px){
+  .index-page header {
+    position: static;
+  }
+
+  html{
+    font-size: 55%;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+
+  .icons {
+    font-size: 18px;
+  }
+
+  
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -80px; /* Start hidden on the left */
+    width: 80px; /* Smaller sidebar */
+    height: 100vh;
+    background-color: #6E1D33; /* Adjust color */
+    transition: left 0.3s ease-in-out;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center icons */
+    padding-top: 20px;
+    z-index: 999;
+  }
+
+  .sidebar.active {
+      left: 0;
+  }
+
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align icons left */
+    width: 100%;
+    padding: 12px;
+    color: white;
+    font-size: 22px;
+ }
+
+  /* Show hamburger button */
+  .hamburger-icon {
+    display: flex;
+    position: fixed;
+    top: 12px;
+    left: 15px;
+    z-index: 1000;
+    cursor: pointer;
+
+  }
+
+  .hamburger-icon img {
+    width: 30px;
+    height: 30px;
+  }
+  .main-content {
+    padding: 10px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Make reports stack vertically */
+  .reports {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Ensure report cards take full width */
+  .report-card {
+    width: 90%;
+    margin: auto;
+
+  }
+
+  .report-button {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #6E1D33;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+ }  
+
+  /* Adjust status badges */
+  .status {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .toggle-btn {
+    right: 8px;
+    top: 10px;
+  }
+
+}
+

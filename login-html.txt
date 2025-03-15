@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapor Cerdas - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="modal">
+        <div class="close-btn">×</div>
+        
+        <div class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 10V40H20V30H30V20H40V10H10Z" stroke="#4a6f8c" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+            <div class="logo-text">Lapor Cerdas</div>
+        </div>
+        
+        <h1 class="title">SELAMAT DATANG!</h1>
+        
+        <a href="signup.html" class="register-link">Belum punya akun, Daftar</a>
+        
+        <div class="form-container">
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="email" class="form-label required">Email</label>
+                    <input type="email" id="email" class="form-input" placeholder="ureeka123@gmail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label required">Password</label>
+                    <div class="password-input-container">
+                        <input type="password" id="password" class="form-input" placeholder="••••••" required>
+                        <div class="password-toggle">👁️</div>
+                    </div>
+                </div>
+                
+                <div class="login-options">
+                    <div class="remember-container">
+                        <input type="checkbox" id="remember" class="remember-checkbox">
+                        <label for="remember">Ingat saya</label>
+                    </div>
+                    
+                    <a href="#" class="forgot-password">Lupa password?</a>
+                </div>
+                
+                <button class="submit-btn">Masuk</button>
+            </div>
+            
+            <div class="illustration">
+                <img src="illustration.svg" alt="Illustration showing people collaborating on a platform">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
