@@ -15,7 +15,6 @@ body {
     margin: 20px;
 }
 
-/* Header */
 header {
     display: flex;
     align-items: center;
@@ -33,7 +32,6 @@ h1 {
     font-weight: 700;
 }
 
-/* Form Styling */
 
 .settings-form {
     background: white;
@@ -50,10 +48,10 @@ h1 {
 .form-row {
     display: flex;
     justify-content: space-between;
-    gap: 15px; /* Memberikan jarak antar input */
+    gap: 15px; 
 }
 .form-row .form-group {
-    flex: 1; /* Membuat kedua elemen memiliki lebar yang sama */
+    flex: 1; 
 }
 .form-group label {
     font-weight: 500;
@@ -79,7 +77,7 @@ h1 {
     outline: none;
 }
 
-/* Button Styles */
+
 .form-actions {
     display: flex;
     justify-content: space-between;
@@ -97,7 +95,7 @@ button {
     transition: 0.3s;
 }
 
-/* Simpan Perubahan */
+
 .save-btn {
     background-color: #123764;
     color: white;
@@ -109,7 +107,6 @@ button {
     background-color: #2563eb;
 }
 
-/* Batalkan */
 .cancel-btn {
     background-color: white;
     color: #3b82f6;
@@ -122,7 +119,6 @@ button {
     background-color: #b5b8bb;
 }
 
-/* Hapus Akun */
 .delete-btn {
     background-color: #7b1e31;
     color: white;
