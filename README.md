@@ -1,57 +1,36 @@
 # LaporCerdas
+<p align="center">
+  <img src="https://github.com/VytoraSNMz/LaporCerdas/blob/main/assets/LogoLaporCerdas.png" alt="LaporCerdas Logo" width="100"/>
+</p>
 
-<p align="center"><a href="https://identity.ic0.app" target="_blank" rel="noopener noreferrer"><img src="https://i.ibb.co.com/MsMwkvx/Logo-NCA.png" alt="NCA"></a></p>
+**LaporCerdas** adalah aplikasi pengaduan masyarakat berbasis teknologi yang dirancang untuk memudahkan masyarakat dalam menyampaikan pengaduan dan masukan terkait layanan publik. Aplikasi ini bertujuan untuk meningkatkan interaksi antara warga dan pemerintah serta mempercepat penanganan masalah yang dihadapi masyarakat.
 
-## Introduction
-LaporCerdas is
+## Fitur Utama
 
-## 🚩Features
-- Track your green activities and progress towards rewards.
-- Daily Challenges, which is basically daily green actions with manageable targets with Green Coin as reward.
-- Leaderboard to see how you are doing compared to others.
-- Act, Submit, Earn, and Exchange! Your actions towards the reduction of CO2 emissions will be handsomely rewarded.
-- NCA Hub Network: Connect with our community to learn, grow, and share knowledges among users in the world.
-- NCA Wallet: Manage your Green Coins and other assets securely.
+- **Pendaftaran Pengguna:** Pengguna dapat mendaftar dengan mudah untuk membuat akun.
+- **Pengaduan Masyarakat:** Pengguna dapat mengajukan pengaduan dengan memilih kategori yang sesuai.
+- **Status Laporan:** Pengguna dapat memantau status pengaduan yang telah diajukan.
+- **Riwayat Laporan:** Pengguna dapat melihat riwayat pengaduan yang telah dibuat.
+- **Umpan Balik:** Pengguna dapat memberikan umpan balik mengenai pengalaman mereka menggunakan aplikasi.
+- **Notifikasi:** Pengguna akan menerima notifikasi terkait status pengaduan dan informasi penting lainnya.
 
-* Green Coins as in-app currencies for exchange in Carbon Credit.
+## Cara Kerja
 
-You can see the following documentation for Internet Computer online:
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
+1. **Pendaftaran Pengguna:**
+   - Pengguna baru dapat mendaftar dengan mengisi formulir pendaftaran.
+   
+2. **Menambahkan Laporan:**
+   - Pengguna dapat mengisi formulir untuk membuat laporan baru, termasuk kategori, deskripsi, dan lokasi kejadian.
 
-## Pre-requisites
-- Node.js (v20)
-- DFX (v0.17.0)
-- NPM (v7.24.0)
-- WSL2 (Windows Subsystem for Linux)
-- Ubuntu-22.04 LTS (WSL2)
+3. **Memantau Status Laporan:**
+   - Pengguna dapat melihat status laporan mereka, termasuk apakah laporan tersebut sudah diverifikasi, sedang diproses, atau telah diselesaikan.
 
-For more details, you can check the installation docs here :
-https://docs.google.com/document/d/e/2PACX-1vTNicu-xuf4EiLAehHIqgfpjAnPjzqMGT-xpZVvYaAWNyvzYK_Ceve_me4PVRIxpzH7ea5PAX9NxGwY/pub
+4. **Memberikan Umpan Balik:**
+   - Pengguna dapat memberikan umpan balik untuk membantu meningkatkan aplikasi.
 
-## 📜 Getting Started (for Windows)
-Finally, to get it running, you can follow these instructions :
-Go to visual studio code, create a new folder, and view terminal.
+## Teknologi yang Digunakan
 
-```
-git clone https://github.com/KevinFu12/NCA.git
-cd NCA
-npm install
-npm i -g ic-mops
-
-wsl
-mops install
-dfx start
-
-// make a new wsl terminal
-dfx deploy
-npm start
-```
-
-## 📧 Contact Information
-If any questions occured, or in the need of any discussion or details,
-please contact us :
-- Email:
-- Discord:
+- **Frontend:** [React](https://reactjs.org/)
+- **Backend:** [Node.js](https://nodejs.org/)
+- **Database:** [MongoDB](https://www.mongodb.com/)
+- **API:** RESTful API untuk komunikasi antara frontend dan backend.
