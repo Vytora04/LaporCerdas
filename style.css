@@ -7,8 +7,8 @@
 
 html,
 body {
-  min-height: 100vh; /* Ensures content can expand */
-  height: auto; /* Allows natural height */
+  min-height: 100vh; 
+  height: auto; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@ body {
   
 }
 
-/* Base sidebar styles */
+
 .sidebar {
   height: 100vh;
   background-color: #46638E;
@@ -30,18 +30,18 @@ body {
   overflow-y: auto;
   z-index: 9999;
   transition: width 0.3s ease;
-  width: 260px; /* Default expanded width */
+  width: 260px; 
   display: flex;
   flex-direction: column;
 }
 
-/* Collapsed state */
+
 .sidebar.collapsed {
   width: 80px;
   padding: 20px 10px;
 }
 
-/* Logo styles */
+
 .sidebar .logo {
   display: flex;
   flex-direction: row;
@@ -69,7 +69,6 @@ body {
   display: none;
 }
 
-/* Divider */
 .sidebar hr {
   width: 80%;
   border: none;
@@ -78,7 +77,6 @@ body {
   margin: 10px auto;
 }
 
-/* Bio text */
 .sidebar .bio {
   text-align: center;
   margin-bottom: 15px;
@@ -90,7 +88,6 @@ body {
   display: none;
 }
 
-/* Add report button */
 .sidebar .add-report {
   display: flex;
   align-items: center;
@@ -132,15 +129,14 @@ body {
   justify-content: center;
 }
 
-/* Navigation content */
 .sidebar-content {
   padding: 0 0 10px 0;
   background: #FFFCFA;
   border-radius: 10px;
   width: 100%;
   flex-grow: 1;
-  overflow-y: auto; /* Enables scrolling */
-  max-height: calc(100vh - 100px); /* Adjust height dynamically */
+  overflow-y: auto; 
+  max-height: calc(100vh - 100px); 
 }
 
 .sidebar nav ul {
@@ -196,7 +192,6 @@ body {
   justify-content: center;
 }
 
-/* Toggle button */
 .toggle-icon{
   width: 10px;
   color: white;
@@ -231,7 +226,7 @@ body {
 /* Media queries for responsive behavior */
 @media screen and (max-width: 768px) {
   .sidebar {
-      width: 80px; /* Start collapsed on tablets */
+      width: 80px; 
   }
   
   .sidebar .logo-text,
@@ -300,13 +295,9 @@ body {
 
 /* index.html STYLES */
 .index-page {
-  /* background-color: #F7FBFF;
-  width: 100%;
-  display: flex; */
-  
   background-color: #F7FBFF;
-  width: calc(100% - 260px); /* Adjust width to prevent overlap */
-  margin-left: 260px; /* Matches sidebar width */
+  width: calc(100% - 260px);
+  margin-left: 260px; 
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -469,16 +460,12 @@ body {
   background: #383538;
 }
 
-/* reportPage.html STYLES */
-/* Differences extracted from style_sky.css compared to style.css */
 
-/* Background color change */
 html,
 body {
   background-color: #e6eaf0; /* Changed from #f7fbff */
 }
 
-/* Index Page header changes */
 .index-page header {
   display: flex;
   justify-content: space-between;
@@ -490,12 +477,11 @@ body {
   top: 0;
   left: 260px;
   right: 0;
-  height: 80px; /* Explicitly set height */
+  height: 80px; 
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* New Report Page Flex Centering */
 .new-report-page {
   display: flex;
   justify-content: center;
@@ -591,13 +577,13 @@ body {
     display: none;
   }
   .new-report-page .sidebar {
-    width: 80px; /* Shrinks when it reaches form */
+    width: 80px;
   }
   .new-report-page .report-form {
-    margin-left: 80px; /* Align with smaller sidebar */
+    margin-left: 80px;
     width: calc(100% - 80px);
   }
-  /* Adjust Sidebar Content */
+ 
   .new-report-page .sidebar .logo-text,
   .new-report-page .sidebar .bio,
   .new-report-page .sidebar .add-text,
@@ -605,11 +591,11 @@ body {
     display: none;
     opacity: 0;
   }
-  /* Center Icons */
+ 
   .new-report-page .sidebar .sidebar-icon {
     margin-right: 0;
   }
-  /* Sidebar Items Centered */
+  
   .new-report-page .sidebar nav ul li {
     padding: 12px 0;
     justify-content: center;
@@ -652,8 +638,6 @@ body {
     margin-bottom: 5px;
   }
 }
-
-
 
 
 /* Modal styles */
@@ -849,7 +833,6 @@ body {
 }
 
 
-
 /* css buat about me start*/
 .introduction {
   padding: 20px;
@@ -895,7 +878,6 @@ body {
   margin-right: auto;
   border-radius: 16px;
   transform: skewY(-0.5deg);
-  /* position: relative; */
 }
 
 .back-icon {
@@ -911,8 +893,6 @@ body {
 
 
 /* css buat about me end*/
-
-
 
 
 /* Responsive style buat laptop */
@@ -953,18 +933,18 @@ body {
     margin-top: 30px;
   }
 
-  /* Sidebar/Navbar */
+
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Full-width navbar */
-    height: 60px; /* Adjust height */
+    width: 100%; 
+    height: 60px; 
     background-color: #6E1D33;
     display: flex;
-    flex-direction: row; /* Align items horizontally */
+    flex-direction: row; 
     align-items: center;
-    justify-content: space-between; /* Center content */
+    justify-content: space-between;
     padding: 0 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
@@ -978,16 +958,16 @@ body {
 
   .nav-items {
     display: flex;
-    flex-grow: 2; /* Allow space for items */
+    flex-grow: 2; 
     justify-content: center;
     gap: 20px;
   }
 
   .bio {
-    display: none; /* Hide bio on tablets */
+    display: none; 
   }
 
-  /* Ensure content is not blocked by navbar */
+  
   .main-content {
     margin-top: 90px;
   }
@@ -997,7 +977,7 @@ body {
     text-align: left;
   }
 
-  /* Search bar fix */
+
   .search-bar {
     width: 100%;
     margin-top: 10px;
@@ -1009,12 +989,11 @@ body {
     align-items: center;
     gap: 15px;
   }
-
-  /* Report button smaller */
+  
   .floating-button {
-    width: 35px;  /* Smaller width */
-    height: 35px; /* Smaller height */
-    font-size: 0.8rem; /* Reduce text/icon size */
+    width: 35px; 
+    height: 35px; 
+    font-size: 0.8rem; 
     padding: 5px;
   }
 
@@ -1097,15 +1076,15 @@ body {
   .sidebar {
     position: fixed;
     top: 0;
-    left: -80px; /* Start hidden on the left */
-    width: 80px; /* Smaller sidebar */
+    left: -80px;
+    width: 80px; 
     height: 100vh;
-    background-color: #6E1D33; /* Adjust color */
+    background-color: #6E1D33;
     transition: left 0.3s ease-in-out;
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center icons */
+    align-items: center; 
     padding-top: 20px;
     z-index: 999;
   }
@@ -1117,7 +1096,7 @@ body {
   .sidebar a {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align icons left */
+    justify-content: flex-start;
     width: 100%;
     padding: 12px;
     color: white;
@@ -1145,13 +1124,12 @@ body {
     width: 100%;
   }
 
-  /* Make reports stack vertically */
+ 
   .reports {
     flex-direction: column;
     gap: 10px;
   }
 
-  /* Ensure report cards take full width */
   .report-card {
     width: 90%;
     margin: auto;
@@ -1173,7 +1151,6 @@ body {
     cursor: pointer;
  }  
 
-  /* Adjust status badges */
   .status {
     font-size: 0.9rem;
     padding: 8px;
