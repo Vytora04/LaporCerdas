@@ -26,6 +26,7 @@
   height: 80px; /* Explicitly set height */
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-right: calc(100vh-260px);
 }
   
   /* Add padding to the main content to prevent it from being hidden behind the fixed header */
@@ -358,6 +359,19 @@
   
   /* Media queries for responsiveness */
   @media (max-width: 768px) {
+    .report-page{
+      width:100%;
+      margin-left: 80px;
+    }
+
+    .report-page header {
+      left: 80px;
+    }
+
+    .search-container {
+      width: 50%;
+    }
+
     .verification-buttons {
       flex-direction: column;
     }
@@ -378,6 +392,19 @@
   
   /* Additional mobile responsive styles */
   @media (max-width: 480px) {
+    .report-page{
+      width:100%;
+      margin-left: 80px;
+    }
+
+    .report-page header {
+      left: 80px;
+    }
+
+    .search-container {
+      width: 70%;
+    }
+
     .report-details {
       padding: 15px;
     }
