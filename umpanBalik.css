@@ -4,9 +4,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensure full height */
+    min-height: 100vh;
     margin: 0;
-    padding: 20px; /* Prevent overflow on small screens */
+    padding: 20px;
 }
 
 .feedback-card {
@@ -14,13 +14,13 @@ body {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    width: 90%; /* Adjust width for responsiveness */
-    max-width: 500px; /* Maintain max width */
+    width: 90%; 
+    max-width: 500px; 
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin: 0 auto; /* Center it properly */
+    margin: 0 auto; 
 }
 
 .feedback-card h1 {
@@ -39,11 +39,10 @@ body {
 }
 
 .feedback-card p {
-    font-size: 0.75rem; /* Slightly larger for readability */
+    font-size: 0.75rem; 
     color: #555;
 }
 
-/* Emoji section */
 .emoji-group span {
     font-size: 1.5rem;
     cursor: pointer;
@@ -59,7 +58,6 @@ textarea {
     resize: none;
 }
 
-/* Buttons */
 .submit-btn, .remind-btn {
     width: 100%;
     padding: 10px;
@@ -80,7 +78,6 @@ textarea {
     border: 2px solid #3b5998;
 }
 
-/* Back link */
 .back-link {
     display: flex;
     justify-content: center;
@@ -102,7 +99,6 @@ textarea {
         display: none;
     }
 
-    /* Hide Sidebar Text */
     .sidebar .logo-text,
     .sidebar .bio,
     .sidebar .add-text,
@@ -114,12 +110,10 @@ textarea {
         overflow: hidden;
     }
 
-    /* Center Sidebar Icons */
     .sidebar .sidebar-icon {
         margin-right: 0;
     }
 
-    /* Adjust Sidebar Items */
     .sidebar nav ul li {
         justify-content: center;
     }
