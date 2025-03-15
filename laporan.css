@@ -11,7 +11,6 @@
     min-height: 100vh;
   }
   
-/* Header with search box - fixed positioning */
 .report-page header {
   display: flex;
   justify-content: space-between;
@@ -23,22 +22,22 @@
   top: 0;
   left: 260px;
   right: 0;
-  height: 80px; /* Explicitly set height */
+  height: 80px; 
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   margin-right: calc(100vh-260px);
 }
   
-  /* Add padding to the main content to prevent it from being hidden behind the fixed header */
+
   .report-page .main-content {
-    position: relative; /* Add this */
-    margin-top: 80px; /* Space for the fixed header */
+    position: relative; 
+    margin-top: 80px; 
     padding: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 80px); /* Instead of fixed height */
-    overflow: visible; /* Ensure content is visible */
+    min-height: calc(100vh - 80px); 
+    overflow: visible; 
   }
   
   .search-container {
@@ -74,7 +73,7 @@
     font-size: 20px;
   }
   
-  /* Report title section */
+
   .report-title {
     margin-bottom: 20px;
   }
@@ -83,9 +82,9 @@
     color: #46638E;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 0; /* Remove extra margin */
+    margin-top: 0; 
   }
-  /* Report details section */
+  
   .report-details {
     background-color: white;
     border-radius: 10px;
@@ -154,28 +153,24 @@
     transition: opacity 0.3s;
   }
   
-  /* Yes button styling */
+
   .verification-buttons .yes-btn {
     background-color: #4CAF50;
   }
   
   .verification-buttons .yes-btn:hover {
-    background-color: #3d8b40; /* 10% darker green */
+    background-color: #3d8b40; 
   }
   
-  /* No button styling */
+ 
   .verification-buttons .no-btn {
     background-color: #7B213E;
   }
   
   .verification-buttons .no-btn:hover {
-    background-color: #691036; /* 10% darker red */
+    background-color: #691036; 
   }
   
-  /* Remove the general button hover that's causing the issue */
-  /* .verification-buttons button:hover {
-    opacity: 0.7;
-  } */
    
   .evidence-upload {
     border: 1px dashed #ccc;
@@ -203,7 +198,7 @@
     font-size: 14px;
   }
   
-  /* Comments section */
+ 
   .comments-section {
     margin: 30px 0;
   }
@@ -269,7 +264,7 @@
     background-color: #2d4468;
   }
   
-  /* Related reports section */
+  
   .related-reports {
     margin: 30px 0;
   }
@@ -316,7 +311,7 @@
     font-size: 0.9rem;
   }
   
-  /* Status indicators */
+  
   .status-indicator {
     display: inline-block;
     padding: 5px 10px;
@@ -339,7 +334,7 @@
     background-color: #46638e;
   }
   
-  /* Trust score */
+  
   .trust-score {
     display: inline-flex;
     align-items: center;
