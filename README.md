@@ -30,7 +30,8 @@
 
 ## Teknologi yang Digunakan
 
-- **Frontend:** [React](https://reactjs.org/)
-- **Backend:** [Node.js](https://nodejs.org/)
-- **Database:** [MongoDB](https://www.mongodb.com/)
-- **API:** RESTful API untuk komunikasi antara frontend dan backend.
+- **Frontend:** [HTML](https://html.com), [CSS](https://css3.com), [JavaScript](https://www.javascript.com)
+- **Backend:** [Python](https://www.python.org/)
+- **AI:** [Hugging Face](https://huggingface.co/) on [Google Colab](https://colab.research.google.com/)  
+- **Database:** [Not implemented]  
+- **API:** [Not implemented]
