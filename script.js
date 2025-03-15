@@ -3,7 +3,7 @@ document.querySelector(".add-report").addEventListener("click", function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Password visibility toggle
+ 
   const passwordToggles = document.querySelectorAll('.password-toggle');
   
   passwordToggles.forEach(toggle => {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           if (passwordInput.type === 'password') {
               passwordInput.type = 'text';
-              this.textContent = '👁️‍🗨️'; // Changed eye icon
+              this.textContent = '👁️‍🗨️'; 
           } else {
               passwordInput.type = 'password';
               this.textContent = '👁️';
@@ -20,16 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
   
-  // Close button functionality
+  
   const closeBtn = document.querySelector('.close-btn');
   
   if (closeBtn) {
       closeBtn.addEventListener('click', function() {
-          // You can add functionality to close the modal
-          // For example, redirecting to another page or hiding the modal
+     
           alert('Close button clicked');
-          // window.location.href = 'index.html'; // Redirect example
-          // or document.querySelector('.modal').style.display = 'none'; // Hide example
       });
   }
   
@@ -40,14 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
       form.addEventListener('click', function(e) {
           e.preventDefault();
           
-          // Get form inputs
+         
           const emailInput = document.getElementById('email');
           const passwordInput = document.getElementById('password');
           const namaLengkap = document.querySelector('input[placeholder="Masukkan nama"]');  
           const agreeCheckbox = document.getElementById('agree');
 
-                 
-          // Basic validation
           let isValid = true;
           
           if (!emailInput.value) {
@@ -70,9 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             highlightError(agreeCheckbox, "Anda harus menyetujui pernyataan!");
         }
 
-    
-
-          // For signup page, check additional fields
+  
           const fullnameInput = document.getElementById('fullname');
           const birthdateInput = document.getElementById('birthdate');
           const termsCheckbox = document.getElementById('terms');
@@ -96,16 +89,10 @@ document.addEventListener('DOMContentLoaded', function() {
           
           
           if (isValid) {
-              // Submit form or perform further actions
               const isSignup = fullnameInput !== null;
               const message = isSignup ? 'Sign up successful!' : 'Login successful!';
               alert(message);
-              
-              // Here you would typically submit the form to your backend
-              // Example: document.querySelector('form').submit();
-              
-              // Or redirect user after successful login/signup
-              // window.location.href = isSignup ? 'welcome.html' : 'dashboard.html';
+            
           }
       });
   }
@@ -130,8 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebar.classList.toggle('collapsed');
         }
     });
-    
-    // Close sidebar when clicking outside (optional)
+  
     document.addEventListener('click', function(event) {
         if (window.innerWidth <= 768 && 
             !sidebar.contains(event.target) && 
@@ -139,8 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebar.classList.remove('expanded');
         }
     });
-    
-    // Adjust sidebar on window resize
+
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
             sidebar.classList.remove('expanded');
@@ -151,9 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const sidebar = document.querySelector('logo', 'bio', 'sidebar-content');
-// document.querySelector('#hamburger-menu').onclick = () => {
-//     sidebar.classList.toggle('active');
-// }
+
+
 document.getElementById('hamburger-menu').addEventListener('click', function() {
     let sidebar = document.querySelector('.sidebar');
     
