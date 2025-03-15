@@ -35,3 +35,6 @@
 - **AI:** [Hugging Face](https://huggingface.co/) on [Google Colab](https://colab.research.google.com/)  
 - **Database:** [Not implemented]  
 - **API:** [Not implemented]
+
+## Dokumentasi
+  Kalian bisa membaca penjelasan lebih lanjut mengenai **LaporCerdas** melalui link berikut: [Google Docs](https://bit.ly/g7-ureeka-2025)
